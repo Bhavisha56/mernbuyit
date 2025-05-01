@@ -23,7 +23,7 @@ const ForgetPassword = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5001/api/auth/forgetpassword", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/forgetpassword`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

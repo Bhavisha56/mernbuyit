@@ -18,7 +18,7 @@ const SingleProductData = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`http://localhost:5001/api/products/product/${id}`);
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/products/product/${id}`);
         const data = await res.json();
        
         
@@ -42,7 +42,7 @@ const SingleProductData = () => {
     };
   
     try {
-      const response = await fetch("http://localhost:5001/api/cart/cart", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cart/cart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

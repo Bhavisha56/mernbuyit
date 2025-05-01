@@ -10,7 +10,7 @@ const Order = () => {
   const [orderitem,setOrderitem]=useState([])
   const fetchitems=async()=>{
    try {
-    const res=await fetch("http://localhost:5001/api/order/order",{
+    const res=await fetch(`${import.meta.env.VITE_API_URL}/api/order/order`,{
       method:"GET",
       headers:{
         "Content-Type":"application/json",
@@ -27,7 +27,7 @@ const Order = () => {
   }
   const deleteitem=async(id)=>{
     try {
-      const res=await fetch(`http://localhost:5001/api/order/order/delete/${id}`,{
+      const res=await fetch(`${import.meta.env.VITE_API_URL}/api/order/order/delete/${id}`,{
         method:"DELETE",
         headers:{
           "Content-Type":"application/json",

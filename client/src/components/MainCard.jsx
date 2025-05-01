@@ -11,7 +11,7 @@ const MainCard = () => {
   useEffect(() => {
     const fetchFormain = async () => {
       try {
-        const res = await fetch('http://localhost:5001/api/main/mainproduct/all', {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/main/mainproduct/all`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

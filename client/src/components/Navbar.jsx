@@ -8,7 +8,7 @@ const {isloggedin,setIsloggedin,cartitem}=useAuth()
   const [orderitem,setOrderitem]=useState([])
   const fetchitems=async()=>{
    try {
-    const res=await fetch("http://localhost:5001/api/order/order",{
+    const res=await fetch(`${import.meta.env.VITE_API_URL}/api/order/order`,{
       method:"GET",
       headers:{
         "Content-Type":"application/json",
@@ -31,7 +31,7 @@ const {isloggedin,setIsloggedin,cartitem}=useAuth()
 const Navigate=useNavigate()
   const handlelogout=async()=>{
   try {
-    const response=await fetch("http://localhost:5001/api/auth/logout",{
+    const response=await fetch(`${import.meta.env.VITE_API_URL}/api/auth/logout`,{
       method:"GET",
       headers:{
         "Content-Type":"application/json",

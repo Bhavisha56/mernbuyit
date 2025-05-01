@@ -18,7 +18,7 @@ const SingleDataForMainCard = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const res = await fetch(`http://localhost:5001/api/main/mainproduct/${id}`,{
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/main/mainproduct/${id}`,{
             method:"GET",
             headers:{
                 "Content-Type":"application/json",
@@ -54,7 +54,7 @@ const SingleDataForMainCard = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:5001/api/cart/cart", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cart/cart`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

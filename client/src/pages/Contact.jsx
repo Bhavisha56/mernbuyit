@@ -40,7 +40,7 @@ const handleSubmit=async(e)=>{
     alert("All Fields are required")
   }
   try {
-    const res=await fetch(`http://localhost:5001/api/contact/contact`,{
+    const res=await fetch(`${import.meta.env.VITE_API_URL}/api/contact/contact`,{
       method:"POST",
       headers:{
         "Content-Type":"application/json",

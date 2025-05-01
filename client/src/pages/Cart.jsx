@@ -12,7 +12,7 @@ const Cart = () => {
 
   const updateQuantityInDB = async (itemId, quantity) => {
     try {
-      await fetch(`http://localhost:5001/api/cart/cart/update/${itemId}`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/api/cart/cart/update/${itemId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const Cart = () => {
     
   const handleDelete=async(itemid)=>{
   try {
-    const res=await fetch(`http://localhost:5001/api/cart/cart/delete/${itemid}`,{
+    const res=await fetch(`${import.meta.env.VITE_API_URL}/api/cart/cart/delete/${itemid}`,{
       method:"DELETE",
       credentials:'include'
     })

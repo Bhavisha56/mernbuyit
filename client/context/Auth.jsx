@@ -20,7 +20,7 @@ export const AuthProvider=({children})=>{
    
     const fetchitems = async (id) => {
       try {
-        const res = await fetch(`http://localhost:5001/api/cart/cart/${id}`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/cart/cart/${id}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json"
@@ -47,7 +47,7 @@ export const AuthProvider=({children})=>{
      useEffect(() => {
         const checklogin=async()=>{
          try {
-          const response = await fetch('http://localhost:5001/api/auth/me', {
+          const response = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/me`, {
             method:"GET",
             credentials: 'include',
           });
@@ -69,7 +69,7 @@ export const AuthProvider=({children})=>{
 
       const RegisterData=async()=>{
           try {
-            const response=await fetch("http://localhost:5001/api/auth/register",{
+            const response=await fetch(`${import.meta.env.VITE_API_URL}/api/auth/register`,{
              method:"POST",
              headers:{
                "Content-Type":"application/json",
