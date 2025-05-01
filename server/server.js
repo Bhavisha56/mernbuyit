@@ -21,7 +21,7 @@ app.use(cookieParser())
 
 
 const corsOption={
-   origin:"https://mernbuyit-76v9.vercel.app",
+   origin:"https://mernbuyit-bugj.vercel.app",
    methods:"GET,POST,PUT,PATCH,DELETE,HEAD",
    credentials:true
 }
